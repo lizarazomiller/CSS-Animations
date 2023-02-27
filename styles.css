@@ -49,6 +49,10 @@ ul {
     width: 50%;
 }
 
+div.top-page > img {
+    position: inherit;
+}
+
 div.top-page > h2 {
     font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
@@ -100,6 +104,8 @@ div.bottom-page > h2 {
     text-align: center;
     padding: 0% 0% 10%;
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .middle-page {
@@ -270,6 +276,13 @@ header .nav-icon {
         font-size: 20px;
         font-weight: 600;
     }
+    body .top-page {
+        background-position-x: right;
+    }
+    body >.top-page > .trees-effect {
+        background-position-x: 96%;
+        animation: dotsGlowing 3s ease-in-out alternate infinite running;
+    }
 }
 
 .top-page img:hover {
@@ -296,4 +309,31 @@ header .nav-icon {
 @keyframes colorSwap {
     100% {background-color: white;
         color: #55C2D8;}
+}
+
+.top-page .dots-effect {
+    background: url(assets/lights_dots.png) no-repeat center;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    animation: dotsBreathing 3s ease-in-out alternate infinite running;
+}
+
+.top-page .trees-effect {
+    background: url(assets/lights_tree.png) no-repeat center;
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    animation: dotsGlowing 3s ease-in-out alternate infinite running;
+}
+
+@keyframes dotsBreathing {
+    100% {transform: translate(-50px, -5px) scale(1.1,1.1);}
+}
+
+@keyframes dotsGlowing {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
 }
